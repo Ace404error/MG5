@@ -2,10 +2,9 @@
 ## Devlog
 
 
-1. When do you think it’s more advantageous to use a NavMesh VS. scripting a character’s movement with physics? Give two example games (imagined or real), one which you think makes more sense with the Navmesh system for character movement, and one which does not.
+1. I think it's more useful to use a NavMesh rather than scripting in games that utilize a lot of enemy NPCs that need to move on their own. An example of this would be Pokemon, where the pokemon in the wild move toward the player automatically once they come within a certain distance. Using a NavMesh system here would be more simple than trying to script every pokemon's movements. In contrast, games with less enemy NPCs that don't have to be as autonomous might benefit more from scripting. This could be realized in fighting games like Tekken, where the player often faces off against one opponent. This opponent, while needing to move toward and away from the player to attack, doesn't need as much freedom to move around due to a smaller stage size. In addition, they often have more complex animations, which is where scripting would be a better choice than a NavMesh.  
 
-
-1. After you fix the for loop in BirdManager.cs, explain what is going on inside the loop. Specifically, what is the call to Vector3.Distance being used for? Based on this if statement, which birds in the _birds array will run away from the player?
+2. The first line of the for loop is looping through the bird array, as long as the index (i) is less than 3. The first line of the body of the for loop calls the RunAway method if the distance between the birds and the player is less than or equal to the value of the _interactDistance variable. This allows the birds to avoid the player. In this line, the call to Vector3.Distance is essentially calculating the distance between its two arguments which, in this case, are the bird's position and the player's position. The last line in the for loop runs the RunAway method. Based on the if statement all of the birds will run away from the player, given they are close enough to them. 
 
 
 ## Open-Source Assets
